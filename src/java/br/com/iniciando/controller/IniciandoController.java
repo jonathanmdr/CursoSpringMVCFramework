@@ -15,4 +15,9 @@ public class IniciandoController {
         return "index";
     }
     
+    @RequestMapping("/cadastro")
+    public String cadastro() {
+        return "cadastro";
+    }
+    
 }
