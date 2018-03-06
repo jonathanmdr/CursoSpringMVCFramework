@@ -1,9 +1,7 @@
 package br.com.iniciando.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -13,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IniciandoController {
     
     @RequestMapping("/olaMundo")
-    public String iniciando(Model model, @RequestParam("nome") String nome) {
-        model.addAttribute("nome",nome);
+    public String iniciando() {
         return "index";
     }
     
