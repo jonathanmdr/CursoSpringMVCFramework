@@ -17,7 +17,7 @@
         <div class="container">
             <div class="col-md-6 cadastro">
                 <h1>Tela de Cadastro</h1>
-                <form>
+                <form action="olaMundo" method="POST">
                     <div class="form-group">
                         Nome
                         <input type="text" name="nome" id="nome" class="form-control" required="">
