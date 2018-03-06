@@ -5,6 +5,11 @@
         <group>
             <file>file:/C:/Users/jonat_000/Documents/NetBeansProjects/IniciandoComSpringMVC/src/java/br/com/iniciando/dominio/Cadastro.java</file>
             <file>file:/C:/Users/jonat_000/Documents/NetBeansProjects/IniciandoComSpringMVC/web/WEB-INF/jsp/cadastro.jsp</file>
+            <file>file:/C:/Users/jonat_000/Documents/NetBeansProjects/IniciandoComSpringMVC/web/WEB-INF/jsp/exibir.jsp</file>
+            <file>file:/C:/Users/jonat_000/Documents/NetBeansProjects/IniciandoComSpringMVC/src/conf/persistence.xml</file>
+            <file>file:/C:/Users/jonat_000/Documents/NetBeansProjects/IniciandoComSpringMVC/src/java/br/com/iniciando/controller/IniciandoController.java</file>
+            <file>file:/C:/Users/jonat_000/Documents/NetBeansProjects/IniciandoComSpringMVC/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/C:/Users/jonat_000/Documents/NetBeansProjects/IniciandoComSpringMVC/src/java/br/com/iniciando/dao/CadastroDAO.java</file>
         </group>
     </open-files>
 </project-private>

@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -14,19 +17,30 @@ import java.util.List;
  */
 public class CadastroDAO {
     
+    public EntityManager getEM() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("IniciandoComSpringMVCPU");
+        return factory.createEntityManager();
+    }
+    
     public void gravar(Cadastro cadastro) throws SQLException {
-        Conexao conn = new Conexao();
-        
-        String sql = "insert into cadastro(nome, endereco, telefone, email) values(?,?,?,?)";
-        
-        PreparedStatement ps = conn.getConexao().prepareStatement(sql);
-        
-        ps.setString(1, cadastro.getNome());
-        ps.setString(2, cadastro.getEndereco());
-        ps.setInt(3, cadastro.getTelefone());
-        ps.setString(4, cadastro.getEmail());
-        
-        ps.execute();
+//        Conexao conn = new Conexao();
+//        
+//        String sql = "insert into cadastro(nome, endereco, telefone, email) values(?,?,?,?)";
+//        
+//        PreparedStatement ps = conn.getConexao().prepareStatement(sql);
+//        
+//        ps.setString(1, cadastro.getNome());
+//        ps.setString(2, cadastro.getEndereco());
+//        ps.setInt(3, cadastro.getTelefone());
+//        ps.setString(4, cadastro.getEmail());
+//        
+//        ps.execute();
+          
+        EntityManager em = getEM();
+        em.getTransaction().begin();
+        em.persist(cadastro);
+        em.getTransaction().commit();
+        em.close();
     }
     
     public List<Cadastro> pesquisar() throws SQLException {
@@ -52,15 +66,5 @@ public class CadastroDAO {
         }
         
         return list;
-    }
-    
-    public static void main(String ... args) {        
-        CadastroDAO dao = new CadastroDAO();
-        
-        try {
-            dao.pesquisar();
-        } catch(SQLException ex) {
-            System.out.println(ex);
-        }
     }
 }
