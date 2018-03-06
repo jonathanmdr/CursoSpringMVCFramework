@@ -1,6 +1,10 @@
 package br.com.iniciando.controller;
 
+import br.com.iniciando.dao.CadastroDAO;
+import br.com.iniciando.dominio.Cadastro;
+import java.sql.SQLException;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -11,7 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IniciandoController {
     
     @RequestMapping("/olaMundo")
-    public String iniciando() {
+    public String iniciando(Model model, Cadastro cadastro) {
+        CadastroDAO dao = new CadastroDAO();
+        
+        try {
+            dao.gravar(cadastro);
+            
+            model.addAttribute("nome", cadastro.getNome());
+        } catch(SQLException ex) {
+            System.out.println(ex);
+        }
+        
         return "index";
     }
     
