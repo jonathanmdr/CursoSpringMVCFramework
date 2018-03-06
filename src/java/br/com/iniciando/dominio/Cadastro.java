@@ -51,5 +51,11 @@ public class Cadastro {
     public void setEmail(String email) {
         this.email = email;
     }        
+
+    @Override
+    public String toString() {
+        return "Cadastro{" + "id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", telefone=" + telefone + ", email=" + email + '}';
+    }
+    
     
 }

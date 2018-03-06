@@ -29,6 +29,19 @@ public class IniciandoController {
         return "index";
     }
     
+    @RequestMapping("/lista")
+    public String exibir(Model model) {
+        CadastroDAO dao = new CadastroDAO();
+        
+        try {
+            model.addAttribute("lista", dao.pesquisar());
+        } catch(SQLException ex) {
+            System.out.println(ex);
+        }
+        
+        return "exibir";
+    }
+    
     @RequestMapping("/cadastro")
     public String cadastro() {
         return "cadastro";

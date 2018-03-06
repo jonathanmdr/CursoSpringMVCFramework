@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Iniciando com Spring MVC</title>
+        <title>Cadastro Concluído</title>
     </head>
     <body>
         <h1>Olá, ${nome}, obrigado por se cadastrar!</h1>
